@@ -1,0 +1,75 @@
+<!-- 
+    workshop gemäss https://www.youtube.com/watch?v=58gAY0cbgek
+    
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Miriam+Libre&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"
+    <style>
+    </style>
+    <script>
+        function appendoperation(operation){
+            document.getElementById('resultarea').innerHTML += operation
+        }
+        function calculateresult() {
+            let container = document.getElementById('resultarea');
+            let result = eval(container.innerHTML);
+            container.innerHTML = result;
+        }
+        function deletelast() {
+            let container = document.getElementById('resultarea');
+            if(container.innerHTML.endsWith(' ')){
+                container.innerHTML = container.innerHTML.slice(0,-3)
+            }else{
+                container.innerHTML = container.innerHTML.slice(0,-1)
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+    <div id="resultarea">
+    
+
+    </div>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td onclick="deletelast()">DEL</td>
+        </tr>
+        <tr>
+            <td onclick="appendoperation(7)">7</td>
+            <td onclick="appendoperation(8)">8</td>
+            <td onclick="appendoperation(9)">9</td>
+            <td onclick="appendoperation(' - ')"class="highlight">-</td>
+        </tr>
+        <tr>
+            <td onclick="appendoperation(4)">4</td>
+            <td onclick="appendoperation(5)">5</td>
+            <td onclick="appendoperation(6)">6</td>
+            <td onclick="appendoperation(' / ')"class="highlight">/</td>
+        </tr>
+        <tr>
+            <td onclick="appendoperation(1)">1</td>
+            <td onclick="appendoperation(2)">2</td>
+            <td onclick="appendoperation(3)">3</td>
+            <td onclick="appendoperation(' * ')"class="highlight">x</td>
+        </tr>
+        <tr>
+            <td onclick="appendoperation(0)">0</td>
+            <td onclick="appendoperation('.')"class="highlight">.</td>
+            <td onclick="calculateresult()" id="result">=</td>
+            <td class="highlight">+</td>
+        </tr>
+    </table>
+</body>
+</html>

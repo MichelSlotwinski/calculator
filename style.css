@@ -1,0 +1,44 @@
+body{
+    font-family: 'Miriam Libre', sans-serif;
+    margin:0;
+}
+
+table{
+    width: 100vw;
+    height: 70vh;
+    background-color: rgb(120, 120, 120);
+    color: rgb(220, 220, 220);
+}
+td{
+    width: 25%;
+    text-align: center;
+    font-size: 24px;
+    background-color: rgb(80, 80, 80);
+}
+td:hover{
+    background-color: rgb(168, 151, 151);
+    cursor:pointer;
+
+}
+#resultarea{
+    height: 30vh;
+    background-color: rgb(180, 180, 180);
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 24px;
+    box-sizing: border-box;
+
+    font-size: 60px;
+}
+#result{
+    background-color: blue;
+}
+#result:hover{
+    background-color: chartreuse;
+}
+.highlight{
+    background-color: blueviolet;
+}
+
